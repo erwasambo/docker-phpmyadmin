@@ -1,4 +1,4 @@
-FROM ubuntu:12.04
+FROM wnameless/mysql-phpmyadmin
 
 MAINTAINER Erick Wasambo <erickwasambo@gmail.com>
 
