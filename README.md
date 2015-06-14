@@ -8,7 +8,7 @@ docker pull erwasambo/phpmyadmin
 
 Run with 22, 80 and 3306 ports opened:
 ```
-docker run -d -p 49160:22 -p 49161:80 -p 49162:3306 erwasambo/phpmyadmin
+docker run -d -p 80:80 -p 3306:3306 erwasambo/phpmyadmin
 ```
 
 Open http://localhost:49161/phpmyadmin in your browser with following credential:
