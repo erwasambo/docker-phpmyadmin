@@ -40,6 +40,13 @@ RUN rm install-phpmyadmin.sh
 
 RUN sed -i -e"s/^bind-address\s*=\s*127.0.0.1/bind-address = 0.0.0.0/" /etc/mysql/my.cnf
 
+RUN echo "Updating mysql configs in /etc/mysql/my.cnf."
+RUN sed -i "s/bind-address.*/bind-address = 0.0.0.0/" /etc/mysql/my.cnf
+
+RUN  /etc/init.d/mysql stop
+RUN  /etc/init.d/mysql start
+
+
 RUN sed -i "s#// \$cfg\['Servers'\]\[\$i\]\['AllowNoPassword'\] = TRUE;#\$cfg\['Servers'\]\[\$i\]\['AllowNoPassword'\] = TRUE;#g" /etc/phpmyadmin/config.inc.php 
 
 EXPOSE 80
